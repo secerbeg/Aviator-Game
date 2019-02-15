@@ -15,7 +15,8 @@ public class Vertices {
 	//Graphics graphics;
 	final int VERTEX_SIZE=(2+2)*4;//size of a vertex in bytes x,y,s,t * floatsize 
 	
-	public Vertices(float []vertices,short indices[]){
+	public Vertices(float []vertices,short indices[])
+	{
 		
 	//	this.graphics=graphics;
 		ByteBuffer bb=ByteBuffer.allocateDirect(VERTEX_SIZE*4);//a square is consist of 4 vertex
@@ -35,7 +36,8 @@ public class Vertices {
 	}//const
 	
 	/**call this before drawing**/
-	public void bind(GL10 gl){
+	public void bind(GL10 gl)
+	{
 		//gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);//enable vertex
 		
 		vertexBuffer.position(0);//x,y start from 0

@@ -17,10 +17,12 @@ public class GameObjects
 	public int height;
 	
 	
-	public GameObjects(){
+	public GameObjects()
+    {
 		
 	}
-	public GameObjects(float x,float y){
+	public GameObjects(float x,float y)
+    {
 		this.x=x;
 		this.y=y;
 	}//gameObjects
@@ -29,7 +31,6 @@ public class GameObjects
     {
 		this(x2,y2);
 		texture=image;
-		
 	}
 
 	
@@ -38,7 +39,6 @@ public class GameObjects
 		this(x, y,texture);
 		this.width=width;
 		this.height=height;
-		
 	}//constructor
 	
 	
@@ -54,41 +54,33 @@ public class GameObjects
 	*/
 	
 	/** returns true if the point resides int the texture rectangle**/
-	public boolean contains(float x,float y){
-		
-		
-		return (x>=this.x-(width>>1) && x<=this.x+(width>>1) //this.x and this.y is the middle
+	public boolean contains(float x,float y)
+    {
+		return
+                (x>=this.x-(width>>1) && x<=this.x+(width>>1) //this.x and this.y is the middle
 				&& y>=this.y-(height>>1) && y<=this.y+(height>>1));
-		
-		
+
 	}//contains
 	
 
 	/** if the shape rectangle of s intersects invoking sprite shape returns true**/
-	public boolean intersect(Sprite s){
-
+	public boolean intersect(Sprite s)
+    {
 		float r1x=x-(width>>1);
 		float r1y=y-(height>>1);
-		
 		float r2x=s.x-(s.width>>1);
 		float r2y=s.y-(s.height>>1);
-		
-		
-		
-		return  r1x<r2x+s.width && 
-				r1x+width>r2x  &&
-			r1y<r2y+s.height &&
-				r1y+height>r2y	;
+
+		return  r1x<r2x+s.width && r1x+width>r2x  && r1y<r2y+s.height && r1y+height>r2y	;
 	}//
 
 	/** determines if the specified sprite is out of the screen
 	 * @return true if not visible false if any part of this sprite is visible
 	 */
-	public boolean isOutOfScreen(){
+	public boolean isOutOfScreen()
+    {
 		float topX=x-(width>>1);
 		float topY=y+(height>>1);
-		
-		return !(topX+width>0 && topX<SCREEN_WIDTH
-				&& topY-height<SCREEN_HEIGHT && topY>0);
+		return !(topX+width>0 && topX<SCREEN_WIDTH && topY-height<SCREEN_HEIGHT && topY>0);
 	}
 }

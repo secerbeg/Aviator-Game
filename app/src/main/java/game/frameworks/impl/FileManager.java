@@ -16,14 +16,17 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.util.Log;
 
-public class FileManager {
+public class FileManager
+{
 	public AssetManager am;
 	
-	public FileManager(Activity gameActivity){
+	public FileManager(Activity gameActivity)
+	{
 		am=gameActivity.getAssets();
 	}//constructor
 	
-	public Bitmap loadBitmap(String fileName){
+	public Bitmap loadBitmap(String fileName)
+	{
 		InputStream is=null;//stream of the file
 		Bitmap bitmap=null;
 		Log.d("loadBitmap", fileName);
@@ -31,18 +34,21 @@ public class FileManager {
 		try{ 
 			is=am.open(fileName);  				 //returns a inputStream of the file hosted in asset
 			bitmap=BitmapFactory.decodeStream(is);	//returns a bitmap object
-		}catch (IOException e){
+		}catch (IOException e)
+		{
 			throw new RuntimeException("couldn't load "+fileName);
 		}//catch
-		finally {
-			try {
+		finally
+		{
+			try
+			{
 				is.close();
-			} catch (Exception e) {
+			} catch (Exception e)
+			{
 				e.printStackTrace(); Log.d("FileManager", "erro in loading "+fileName);
 			} 
 		}
-		
-		
+
 		return bitmap;
 	}
 	/*

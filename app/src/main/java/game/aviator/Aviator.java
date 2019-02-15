@@ -48,11 +48,11 @@ public class Aviator extends Game
 		{
 			currentGameState = GameState.Initialized;
 		}//synch
-		gameOver=false;
-		glView=new GLSurfaceView(this);
+		gameOver = false;
+		glView = new GLSurfaceView(this);
 		glView.setRenderer(this);
 		setContentView(glView); //start new game
-		graphics=new Graphics(glView);
+		graphics = new Graphics(glView);
 	}
 	
 	/**called when user click resume button from pause menu**/

@@ -1,6 +1,7 @@
 package game.frameworks;
 
-public interface Recyclable {
+public interface Recyclable
+{
 	void recycle();
 	
 }

@@ -2,13 +2,18 @@ package game.frameworks.impl;
 
 import android.util.Log;
 
-public class FPS {
-	  int frames;
-	 long startTime=System.nanoTime();
-	 public int currentFPS;
-	public  void logFrameRate(){
+public class FPS
+{
+
+	int frames;
+	long startTime=System.nanoTime();
+	public int currentFPS;
+
+	public  void logFrameRate()
+	{
 		frames++;
-		if(System.nanoTime()-startTime>=1000000000){
+		if(System.nanoTime()-startTime>=1000000000)
+		{
 			Log.d("FPS",""+frames);
 			currentFPS=frames;
 			frames=0;

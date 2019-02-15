@@ -2,7 +2,8 @@ package game.aviator;
 
 
 
-public  interface GameConstants {
+public  interface GameConstants
+{
 	
 	short BOSS_HEALTH=1000;
 	short BOMB_DAMAGE=200;

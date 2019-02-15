@@ -1,5 +1,6 @@
 package game.frameworks.impl;
 
-public class AccelerometerInput  {
+public class AccelerometerInput
+{
 
 }
