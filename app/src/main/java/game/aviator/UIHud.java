@@ -10,13 +10,13 @@ import java.util.LinkedList;
 
 import javax.microedition.khronos.opengles.GL10;
 
-public class UIHud implements GameConstants {
+public class UIHud implements GameConstants
+{
 	/**
-	 * 
-	 * @param width widht of the scoreBoard
-	 * @param height height o the scoreBoard
+	 *
 	 */
-	public UIHud(){ 
+	public UIHud()
+	{
 		digits=GameResource.numbers;	
 		singleDigitShape=Vertices.getRectangularShape(DIGIT_WIDTH, DIGIT_HEIGHT);
 		itemShape=Vertices.getRectangularShape(ITEM_WIDTH,ITEM_HEIGHT);
@@ -33,13 +33,17 @@ public class UIHud implements GameConstants {
 		);//haelth bar
 	}
 	
-	public void update(float dt){
+	public void update(float dt)
+	{
 		angle+=100*dt;
 		if(angle>=360)
+		{
 			angle=angle-360;//make sure angle doesn't get too large
+		}
 	}
 	
-	public void drawInteger(GL10 gl,int X,int Y,int number,byte numOfDigit){
+	public void drawInteger(GL10 gl,int X,int Y,int number,byte numOfDigit)
+	{
 
 		X=X-(DIGIT_WIDTH>>1);
 		X+=DIGIT_WIDTH*numOfDigit;//score will be printed from right to left so increment x to the last position

@@ -46,9 +46,8 @@ public class Aviator extends Game
 	{
 		synchronized(currentGameState)
 		{
-			currentGameState=GameState.Initialized;
+			currentGameState = GameState.Initialized;
 		}//synch
-	
 		gameOver=false;
 		glView=new GLSurfaceView(this);
 		glView.setRenderer(this);
@@ -95,10 +94,12 @@ public class Aviator extends Game
 		finish();
 	}//exit
 
-	public void onOptionClick(View v){
+	public void onOptionClick(View v)
+    {
 		setContentView(R.layout.opt);
 	}
-	public void onBackClick(View v){
+	public void onBackClick(View v)
+    {
 		setContentView(R.layout.activity_main);
 	}
 
@@ -109,6 +110,7 @@ public class Aviator extends Game
 		public void update(float dt)
         {
 		in.processInput(dt);
+
 		if(World2D.endOfMapReached==false)//scroll background if end of the map is not reached
         {
             world.scroll(dt);//scroll background
@@ -314,13 +316,15 @@ public class Aviator extends Game
 		}
 	
 		@Override
-		public  void pause() {
+		public  void pause()
+        {
 			//setCOnventView pauselayout
 		
 		}
 	
 		/**all initialization code should be here***/		
-		protected GameScreen(Game game) {
+		protected GameScreen(Game game)
+        {
 			super(game);		
 						in=new InputListener(game,player);
 						glView.setOnTouchListener(in);
@@ -332,21 +336,35 @@ public class Aviator extends Game
 
 
 		@Override
-		public void dispose() {
+		public void dispose()
+        {
+
 		/**disposing texture**/
 			
 			for(int i=0;i<enemyTextures.length;i++)
-				enemyTextures[i].dispose();
+            {
+                enemyTextures[i].dispose();
+            }
 			for(int i=0;i<backgrounds.length;i++)
-				backgrounds[i].dispose();
+            {
+                backgrounds[i].dispose();
+            }
 			for(int i=0;i<=9;i++)
-				numbers[i].dispose();
+            {
+                numbers[i].dispose();
+            }
 			for(int i=0;i<bonusTextures.length;i++)
-				bonusTextures[i].dispose();
+            {
+                bonusTextures[i].dispose();
+            }
 			for(int i=0;i<hudTextures.length;i++)
-				hudTextures[i].dispose();
+            {
+                hudTextures[i].dispose();
+            }
 			for(int i=0;i<projectileTextures.length;i++)
-				projectileTextures[i].dispose();
+            {
+                projectileTextures[i].dispose();
+            }
 			//sprites=null;
 			
 			/***now dispose static array**/

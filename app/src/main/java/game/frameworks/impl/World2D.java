@@ -46,11 +46,13 @@ import javax.microedition.khronos.opengles.GL10;
 
 import android.util.Log;
 
-public class World2D implements World,GameConstants {
+public class World2D implements World,GameConstants
+{
 	
 	
 	
-	public World2D(Game game,int level){
+	public World2D(Game game,int level)
+	{
 		this.game=game;
 		mapLines=new LinkedList<String>();
 		enemies=new LinkedList<Enemy>();

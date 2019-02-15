@@ -6,8 +6,8 @@ import javax.microedition.khronos.opengles.GL10;
 import android.graphics.Bitmap;
 import android.opengl.GLUtils;
 
-public class Texture {
-	
+public class Texture
+{
 	private FileManager fm;
 	private Graphics graphics;
 	private String fileName;//bitmap takes a lot of memory instead save the filePath to reload

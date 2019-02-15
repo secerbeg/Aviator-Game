@@ -14,7 +14,7 @@ import android.util.Log;
 public class GameResource implements GameConstants
 {
 
-	
+	private int edatafront=0;
 	 
 	short enemyData[][]={
 		//																										<<<<<<<<<<<<>>>WEAPON DATA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>		
@@ -37,30 +37,38 @@ public class GameResource implements GameConstants
 	};//enemy Data
 	
 	 
-	private int edatafront=0;
-	public short[] dequeEnemyData(){
+
+	public short[] dequeEnemyData()
+	{
 		return enemyData[data[edatafront++]];
 	}
 	
 
 	/**read enemy data from the data file and save it in enemy data**/
-public void readSpriteData(String fileName) {
+public void readSpriteData(String fileName)
+{
 		try{
 			LinkedList<String> num=new LinkedList<String>();
 			
 			BufferedReader br=(game.fileManager.getBufferedReader(fileName));
 			String s;
 			while((s=br.readLine()) !=null)
-				num.add(s);
+            {
+                num.add(s);
+            }
 			
 			data=new int[num.size()];
 				
 			/**convert the strings into number*/
-			for(int i=0;i<data.length;i++){
+			for(int i=0;i<data.length;i++)
+			{
 				data[i]=Integer.parseInt(num.removeFirst());
 			}//for
 			
-		}catch(IOException e){}
+		}catch(IOException e)
+        {
+
+        }
 		
 	}//
 	
@@ -94,19 +102,32 @@ public void readSpriteData(String fileName) {
 	}
 	
 	
-	public void reloadAllTextures(){
+	public void reloadAllTextures()
+    {
 		for(int i=0;i<enemyTextures.length;i++)
-			enemyTextures[i].reload();
+        {
+            enemyTextures[i].reload();
+        }
 		for(int i=0;i<backgrounds.length;i++)
-			backgrounds[i].reload();
+        {
+            backgrounds[i].reload();
+        }
 		for(int i=0;i<=9;i++)
-			numbers[i].reload();
+        {
+            numbers[i].reload();
+        }
 		for(int i=0;i<bonusTextures.length;i++)
-			bonusTextures[i].reload();
+        {
+            bonusTextures[i].reload();
+        }
 		for(int i=0;i<hudTextures.length;i++)
-			hudTextures[i].reload();
+        {
+            hudTextures[i].reload();
+        }
 		for(int i=0;i<projectileTextures.length;i++)
-			projectileTextures[i].reload();
+        {
+            projectileTextures[i].reload();
+        }
 		
 		
 	}//reload
